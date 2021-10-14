@@ -48,15 +48,10 @@ const corners = (state = []) => {
 
   if(state.length == 0){
 
-      console.log({
+      return {
           topRight: [0,0],
           bottomLeft: [0,0]
-      });
-
-      return ({
-          topRight: [0,0],
-          bottomLeft: [0,0]
-      });
+      };
 
   } else{
 
@@ -74,12 +69,10 @@ const corners = (state = []) => {
 
       bL = [verticals[0], horizontals[0]];
 
-      return(
-          {
-              topRight: tR,
-              bottomLeft: bL
-          }
-      );
+      return {
+          topRight: tR,
+          bottomLeft: bL
+      };
 
   }
 
