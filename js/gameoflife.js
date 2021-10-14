@@ -4,10 +4,22 @@ function seed() {
 
 function same([x, y], [j, k]) {
 
-  if(arguments[0] === arguments[1]){
+  let args = [...arguments];
+
+  if(args[0].length === args[1].length){              
+
+    for(i = 0; i < args[0].length; i++){
+
+      if(args[0][i] !== args[1][i]){
+        return false;
+      }
+
+    }
+
     return true;
   }
 
+  return false;
 }
 
 // The game state to search for `cell` is passed as the `this` value of the function.
