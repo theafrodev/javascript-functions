@@ -2,7 +2,13 @@ function seed() {
   return [...arguments];
 }
 
-function same([x, y], [j, k]) {}
+function same([x, y], [j, k]) {
+
+  if(arguments[0] === arguments[1]){
+    return true;
+  }
+
+}
 
 // The game state to search for `cell` is passed as the `this` value of the function.
 function contains(cell) {}
