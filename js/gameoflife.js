@@ -39,7 +39,51 @@ const printCell = (cell, state) => {
 
 };
 
-const corners = (state = []) => {};
+const corners = (state = []) => {
+
+  let verticals = [];
+  let horizontals = [];
+  let tR = [];
+  let bL = [];
+
+  if(state.length == 0){
+
+      console.log({
+          topRight: [0,0],
+          bottomLeft: [0,0]
+      });
+
+      return ({
+          topRight: [0,0],
+          bottomLeft: [0,0]
+      });
+
+  } else{
+
+      for(i = 0; i < state.length; i++){
+          verticals.push(state[i][0]);
+
+          horizontals.push(state[i][1]);
+      }
+
+      verticals.sort( (a , b) => a - b);
+
+      horizontals.sort( (a , b) => a - b);
+
+      tR = [verticals[verticals.length-1], horizontals[horizontals.length-1]];
+
+      bL = [verticals[0], horizontals[0]];
+
+      return(
+          {
+              topRight: tR,
+              bottomLeft: bL
+          }
+      );
+
+  }
+
+};
 
 const printCells = (state) => {};
 
