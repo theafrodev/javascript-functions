@@ -78,7 +78,50 @@ const corners = (state = []) => {
 
 };
 
-const printCells = (state) => {};
+const printCells = (state) => {
+
+  let ext = corners(state);
+
+  let topRight = ext.topRight;
+  let bottomLeft = ext.bottomLeft;
+
+  let map = "";
+
+  let vert = topRight[0];
+  let hor = topRight[1];
+
+  let vertlimit = bottomLeft[0];
+
+  while (!vert < vertlimit){
+      for(row = 0; row < hor; row++){
+
+      map = map.concat(` ${vert} , ${row+1}`);
+
+      map = printCell(state, [`${vert}` , `${row+1}`]);
+
+      console.log(map);
+
+      if(row === hor - 1){
+          map = map.concat("\n");
+          vert --;
+      }
+
+      /*let printout = printCells(state, [topRight[vert],bottomLeft[hor]]);
+
+      map = map.concat(printout);
+
+      if(hor == bottomLeft[hor]){
+          map = map.concat("\n");
+      }*/
+      }
+  }
+
+
+  console.log(topRight);
+  //console.log(bottomLeft);
+
+};
+
 
 const getNeighborsOf = ([x, y]) => {};
 
