@@ -87,23 +87,25 @@ const printCells = (state) => {
 
   let map = "";
 
-  let vert = topRight[0];
-  let hor = topRight[1];
+  let top = topRight[0];
+  let right = topRight[1];
+  let bottom = bottomLeft[0];
+  let left = bottomLeft[1];
 
-  let vertlimit = bottomLeft[0];
+  while (top >= bottom){
 
-  while (vert > vertlimit){
+      for(index = left; index <= right; index++){
+          console.log(top, index);
+          map = map.concat(`${printCell([top,index],state)} `);
 
-      for(row = 0; row < hor; row++){
-          map = map.concat(` ${printCell([vert, row+1] , state)}`);
-
-          if(row === hor - 1){
+          if(index === right){
               map = map.concat("\n");
-              vert--;
+              top--;
           }
       }
 
   }
+
 
   console.log(map);
 
