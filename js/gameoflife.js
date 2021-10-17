@@ -103,7 +103,7 @@ const printCells = (state) => {
 
       if(row === hor - 1){
           map = map.concat("\n");
-          vert --;
+          vert--;
       }
 
       /*let printout = printCells(state, [topRight[vert],bottomLeft[hor]]);
@@ -116,8 +116,9 @@ const printCells = (state) => {
       }
   }
 
+  return map;
 
-  console.log(topRight);
+  //console.log(topRight);
   //console.log(bottomLeft);
 
 };
