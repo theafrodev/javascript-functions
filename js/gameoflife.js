@@ -78,14 +78,14 @@ const corners = (state = []) => {
 
 };
 
-/*const printCells = (state) => {
+const printCells = (state) => {
 
   let ext = corners(state);
 
   let topRight = ext.topRight;
   let bottomLeft = ext.bottomLeft;
 
-  let map = "";
+  let mapd = "";
 
   let top = topRight[1];
   let right = topRight[0];
@@ -96,26 +96,26 @@ const corners = (state = []) => {
 
       for(x = left; x <= right; x++){
           
-          map = map.concat(`${printCell([x,top],state)}`);
+          mapd = mapd.concat(`${printCell([x,top],state)}`);
 
           if(x === right){
-              map = map.concat("\n");
+              mapd = mapd.concat("\n");
               top--;
           }else{
-              map = map.concat(" ");
+              mapd = mapd.concat(" ");
           }
       }
 
   }
 
-  console.log(map);
+  //console.log(mapd);
 
-  return map;
+  return mapd;
 
-};*/
+};
 
 
-const printCells = state => {
+/*const printCells = state => {
   const { bottomLeft, topRight } = corners(state);
   let accumulator = "";
   for (let y = topRight[1]; y >= bottomLeft[1]; y--) {
@@ -126,7 +126,7 @@ const printCells = state => {
     accumulator += row.join(" ") + "\n";
   }
   return accumulator;
-};
+};*/
 
 const getNeighborsOf = ([x, y]) => {};
 
