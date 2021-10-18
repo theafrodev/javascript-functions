@@ -95,7 +95,7 @@ const printCells = (state) => {
   while (top >= bottom){
 
       for(x = left; x <= right; x++){
-          console.log(x, top);
+          
           map = map.concat(`${printCell([x,top],state)}`);
 
           if(x === right){
@@ -108,13 +108,11 @@ const printCells = (state) => {
 
   }
 
-
   console.log(map);
 
   return map;
 
 };
-
 
 const getNeighborsOf = ([x, y]) => {};
 
