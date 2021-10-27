@@ -120,7 +120,27 @@ const getNeighborsOf = ([x, y]) => [
   [x-1, y-1], [x, y-1], [x+1, y-1]
 ]
 
-const getLivingNeighbors = (cell, state) => {};
+const getLivingNeighbors = (cell, state) => {
+
+  let neighbours = getNeighborsOf(cell);
+
+  let livingNeighbours = [];
+
+  for(var i = 0; i < neighbours.length; i++){
+
+      //console.log(contains.bind(state)(neighbours[i]));
+
+      if(contains.bind(state)(neighbours[i])){
+          livingNeighbours.push(neighbours[i]);
+      }
+
+  }
+
+  //console.log(livingNeighbours);
+
+  return livingNeighbours;
+
+};
 
 const willBeAlive = (cell, state) => {};
 
