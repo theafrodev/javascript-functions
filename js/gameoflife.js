@@ -142,7 +142,17 @@ const getLivingNeighbors = (cell, state) => {
 
 };
 
-const willBeAlive = (cell, state) => {};
+const willBeAlive = (cell, state) => {
+  livingNeighbours = getLivingNeighbors(cell,state);
+
+  if(livingNeighbours.length === 3){
+      return true;
+  }else if(contains.bind(state)(cell) && livingNeighbours.length === 2){
+      return true;
+  }else{
+      return false;
+  }
+};
 
 const calculateNext = (state) => {};
 
