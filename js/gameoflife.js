@@ -163,7 +163,7 @@ const calculateNext = (state) => {
           }
       }
       console.log(result);
-return result;
+  return result;
 };
 
 const iterate = (state, iterations) => {};
