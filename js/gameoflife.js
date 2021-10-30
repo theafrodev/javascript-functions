@@ -196,7 +196,19 @@ const calculateNext = (state) => {
 
 };
 
-const iterate = (state, iterations) => {};
+const iterate = (state, iterations) => {
+
+  let result = [state];
+  let ns = state;
+
+  for (let i = 0; i < iterations; i++){
+      ns = calculateNext(ns);
+      result.push(ns);
+  }
+
+  return result;
+
+};
 
 const main = (pattern, iterations) => {};
 
