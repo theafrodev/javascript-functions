@@ -180,11 +180,13 @@ const calculateNext = (state) => {
 
   //console.log(topRight);
 
-  for(let x = bottom; x <= top; x++){
-      for(y = left; y <= right; y++){
+  for(y = right; y >= left; y--){
+
+    for(let x = bottom; x <= top; x++){
           //console.log([x,y]);
           newstate.push([x,y]);
-      }
+    }
+    
   }
 
   for(let i = 0; i < newstate.length; i++){
@@ -200,7 +202,6 @@ const calculateNext = (state) => {
   return result;
 
 };
-
 
 const iterate = (state, iterations) => {};
 
