@@ -155,14 +155,45 @@ const willBeAlive = (cell, state) => {
 };
 
 const calculateNext = (state) => {
-  const { bottomLeft, topRight } = corners(state);
-      let result = [];
-      for (let y = topRight[1] + 1; y >= bottomLeft[1] - 1; y--) {
-          for (let x = bottomLeft[0] - 1; x <= topRight[0] + 1; x++) {
-          result = result.concat(willBeAlive([x, y], state) ? [[x, y]] : []);
-          }
+
+  let board = corners(state);
+
+  let topRight = board.topRight;
+
+  let bottomLeft = board.bottomLeft;
+
+  let bottom = bottomLeft[0] - 1;
+
+  let left = bottomLeft[1] - 1;
+
+  let top = topRight[0] + 1;
+
+  let right = topRight[1] + 1;
+
+  topRight = [top, right];
+
+  bottomLeft = [bottom, left];
+
+  let newstate = [];
+
+  let result = [];
+
+  for(y = right; y >= left; y--){
+  for(let x = bottom; x <= top; x++){
+          newstate.push([x,y]);
       }
+  }
+
+  for(let i = 0; i < newstate.length; i++){
+
+      if(willBeAlive(newstate[i],state)){
+          result.push(newstate[i]);
+      }
+
+  }
+  
   return result;
+
 };
 
 const iterate = (state, iterations) => {};
