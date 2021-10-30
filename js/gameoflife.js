@@ -154,7 +154,53 @@ const willBeAlive = (cell, state) => {
   }
 };
 
-const calculateNext = (state) => {};
+const calculateNext = (state) => {
+
+  let board = corners(state);
+
+  let topRight = board.topRight;
+
+  let bottomLeft = board.bottomLeft;
+
+  let bottom = bottomLeft[0] - 1;
+
+  let left = bottomLeft[1] - 1;
+
+  let top = topRight[0] + 1;
+
+  let right = topRight[1] + 1;
+
+  topRight = [top, right];
+
+  bottomLeft = [bottom, left];
+
+  let newstate = [];
+
+  let result = [];
+
+  //console.log(topRight);
+
+  for(let x = bottom; x <= top; x++){
+      for(y = left; y <= right; y++){
+          //console.log([x,y]);
+          newstate.push([x,y]);
+      }
+  }
+
+  for(let i = 0; i < newstate.length; i++){
+
+      if(willBeAlive(newstate[i],state)){
+          result.push(newstate[i]);
+      }
+
+  }
+
+  console.log(result);
+
+  return result;
+
+};
+
 
 const iterate = (state, iterations) => {};
 
