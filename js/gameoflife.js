@@ -162,7 +162,6 @@ const calculateNext = (state) => {
           result = result.concat(willBeAlive([x, y], state) ? [[x, y]] : []);
           }
       }
-      console.log(result);
   return result;
 };
 
