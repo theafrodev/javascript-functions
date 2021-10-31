@@ -211,9 +211,19 @@ const iterate = (state, iterations) => {
 };
 
 const main = (pattern, iterations) => {
-  const results = iterate(startPatterns[pattern], iterations);
-  results.forEach(r => console.log(printCells(r)));
-  };
+
+  let result = "";
+
+  let theState = iterate(startPatterns[pattern], iterations);
+
+  for (let i = 0; i<theState.length; i++){
+      result = result.concat(printCells(theState[i]));
+      result = result.concat("\n");
+  }
+  
+  console.log(result);
+
+};
 
 const startPatterns = {
     rpentomino: [
